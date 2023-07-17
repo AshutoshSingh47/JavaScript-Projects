@@ -10,39 +10,37 @@ async function fetchNews(query) {
   bindData(data.news);
 }
 
+function bindData(articles) {
+  const cardsContainer = document.getElementById("cards-container");
+  const newsCardTemplate = document.getElementById("template-news-card");
 
-function bindData(articles){
-const cardsContainer = document.getElementById("cards-container");
-const newsCardTemplate = document.getElementById("template-news-card");
+  cardsContainer.innerHTML = "";
 
-cardsContainer.innerHTML="";
-
-articles.forEach(article => {
-  if(!article.image) return;
-  const cardClone = newsCardTemplate.content.cloneNode(true);
-  fillDataInCard(cardClone, article);
-  cardsContainer.appendChild(cardClone);
-
-});
+  articles.forEach((article) => {
+    if (!article.image) return;
+    const cardClone = newsCardTemplate.content.cloneNode(true);
+    fillDataInCard(cardClone, article);
+    cardsContainer.appendChild(cardClone);
+  });
 }
 
-function fillDataInCard(cardClone, article){
+function fillDataInCard(cardClone, article) {
   const newsImg = cardClone.querySelector("#news-img");
   const newsTitle = cardClone.querySelector("#news-title");
   const newsSource = cardClone.querySelector(".news-source");
   const newsDesc = cardClone.querySelector(".news-desc");
 
-  newsImg.src=article.image;
-  newsTitle.innerHTML=article.title;
-  
-  const date =new Date(article.publish_date).toLocaleString("en-US",{
-    timeZone:"Asia/Jakarta"
+  newsImg.src = article.image;
+  newsTitle.innerHTML = article.title;
+
+  const date = new Date(article.publish_date).toLocaleString("en-US", {
+    timeZone: "Asia/Jakarta",
   });
   const newsDescription = article.text;
-  newsSource.innerHTML=`${article.author} - ${date}`;
-  newsDesc.innerHTML=newsDescription.slice(0,300);
+  newsSource.innerHTML = `${article.author} - ${date}`;
+  newsDesc.innerHTML = newsDescription.slice(0, 300);
 
-  cardClone.firstElementChild.addEventListener("click",()=>{
-    window.open(article.url,"_blank");
-  })
+  cardClone.firstElementChild.addEventListener("click", () => {
+    window.open(article.url, "_blank");
+  });
 }
