@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link href="style.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c009f92334.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="main-nav flex">
+        <div class="search-bar flex">
+          <input type="text" id="search-text" placeholder="Enter City" />
+          <div class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="weather container">
+        <img src="./assets/rain.png" class="weather-icon" alt="rain" />
+        <h1 class="temp">22 °C</h1>
+        <h2 class="city">Gorakhpur</h2>
+        <div class="details flex">
+          <div class="col flex">
+            <img
+              src="./assets/humidity.png"
+              class="weather-detail-icon"
+              alt="humidity"
+            />
+            <div class="details-text">
+              <p class="humidity">50%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col flex">
+            <img
+              src="./assets/wind.png"
+              class="weather-detail-icon"
+              alt="wind"
+            />
+            <div class="details-text">
+              <p class="wind">15km/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
