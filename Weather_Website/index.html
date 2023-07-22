@@ -11,18 +11,15 @@
     ></script>
   </head>
   <body>
-    <nav>
-      <div class="main-nav flex">
+    <main>
+      <div class="weather container">
         <div class="search-bar flex">
           <input type="text" id="search-text" placeholder="Enter City" />
           <div class="search-button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
         </div>
-      </div>
-    </nav>
-    <main>
-      <div class="weather container">
+        <div class="error">Invalid City Name</div>
         <img src="./assets/rain.png" class="weather-icon" alt="rain" />
         <h1 class="temp">22 °C</h1>
         <h2 class="city">Gorakhpur</h2>
@@ -53,5 +50,6 @@
       </div>
     </main>
     <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>

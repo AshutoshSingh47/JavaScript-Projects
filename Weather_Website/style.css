@@ -48,7 +48,7 @@ nav {
   width: 100%;
   padding-inline: 12px;
   border-radius: 20px;
-  border: solid 2px #bbd0e2;
+  border: solid 2px #ebfffc;
   font-family: "Poppins", sans-serif;
 }
 
@@ -57,12 +57,12 @@ nav {
   text-align: center;
   padding-block: 12px;
   width: 50px;
-  background-color: #bbd0e2;
+  background-color: #ebfffc;
   height: 50px;
   border-radius: 50%;
-  border: solid 1px #bbd0e2;
+  border: solid 1px #ebfffc;
+  color: black;
   cursor: pointer;
-  box-shadow: 0 0 4px #bbd0e2;
 }
 
 @media screen and (max-width: 480px) {
@@ -72,8 +72,6 @@ nav {
 }
 main {
   width: 100%;
-  padding-block: 20px;
-  margin-top: 100px;
   color: #fff;
 }
 .container {
@@ -83,14 +81,16 @@ main {
 }
 .weather {
   text-align: center;
-  padding: 30px 0;
+  padding: 10px 20px;
   background: linear-gradient(135deg, #00feba, #5b548a);
 }
 
 .weather-icon {
+  margin-block-start: 20px;
   width: 200px;
 }
 .weather h1 {
+  margin-block-start: -40px;
   font-size: 60px;
   font-weight: 500;
 }
@@ -99,7 +99,7 @@ main {
   font-weight: 300;
 }
 .details {
-  margin: 100px auto;
+  margin: 120px auto 100px auto;
   width: 100%;
   justify-content: space-evenly;
 }
@@ -113,4 +113,8 @@ main {
 .wind {
   margin-top: 20px;
   font-size: 30px;
+}
+.error {
+  display: none;
+  color: red;
 }
