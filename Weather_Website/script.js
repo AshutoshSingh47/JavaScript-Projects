@@ -18,6 +18,7 @@ async function getWeatherData(city) {
     }, 2000);
   }
   const data = await res.json();
+  console.log(data);
   fillDataInCard(data);
 }
 
@@ -29,10 +30,12 @@ function fillDataInCard(data) {
   const weather_icon = document.querySelector(".weather-icon");
 
   let icon = data.weather[0].icon;
+  console.log(icon);
   weather_icon.src = "https://openweathermap.org/img/wn/" + `${icon}@2x.png`;
+  console.log("https://openweathermap.org/img/wn/" + `${icon}.png`);
 
   city.innerHTML = data["name"];
-  temp.innerHTML = Math.round(data["main"]["temp"]) + " °C";
+  temp.innerHTML = Math.round(data["main"]["temp"]) + " °C ";
   humidity.innerHTML = data["main"]["humidity"] + "%";
   wind.innerHTML = data["wind"]["speed"] + "km/h";
 }
