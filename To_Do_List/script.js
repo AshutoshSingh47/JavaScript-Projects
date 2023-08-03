@@ -77,7 +77,6 @@ function completeTask(checkBoxes) {
         taskCount++;
       }
       displayCount(taskCount);
-      console.log(localStorage.getItem("data"));
     };
   });
 }
