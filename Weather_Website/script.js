@@ -1,4 +1,4 @@
-const API_KEY = "863242cfb2b1d357e6093d9a4df19a4b";
+const API_KEY = "bd5e378503939ddaee76f12ad7a97608";
 const url = "https://api.openweathermap.org/data/2.5/weather";
 
 window.addEventListener("load", () => getWeatherData("Gorakhpur"));
