@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applying for Job position Frontend Developer</title>
+  </head>
+  <body>
+    <script>
+      const applicationData = {
+        agreeOnTakeTest: true,
+        name: "Ashutosh Singh",
+        email: "ashu050502@gmail.com",
+        yearOfExperience: 1,
+        rateOptimization: 6,
+        github: "https://github.com/AshutoshSingh47",
+        linkedin: "https://www.linkedin.com/in/ashutosh-singh-64b7371b1/",
+        phone: "8303594560",
+        techstack: [
+          "HTML",
+          "CSS",
+          "SASS",
+          "JavaScript",
+          "React",
+          "TypeScript",
+          "Bootstrap",
+          "RestAPIs",
+          "Git",
+          "MVC",
+          "Design Patterns",
+        ],
+        relocatable: true,
+        goal: "Right now my current goal is to promote myself from a less experienced Frontend Developer to an experienced and Professional Frontend Developer",
+        achievement: [
+          "5 star rank in Java on Hackerrank",
+          "Written few articles at GeeksforGeeks over Data Structure and Algorithms in Java.",
+          "I managed a team for the completion of our college project",
+        ].join('\n'),
+        why: "I want to work at Willeder Inc. because I am impressed by your approach of applying for job positions in your company, it shows you want to hire only top-notch engineers with carefully selected technical skills and i want to work in such an environment where i can take up challenges and upskill myself. ",
+        reason:
+          "I want to work at Willeder Inc. because I am impressed by your approach of applying for job positions in your company, it shows you want to hire only top-notch engineers with carefully selected technical skills and i want to work in such an environment where i can take up challenges and upskill myself.",
+        currentSalary: 25000,
+        expectedSalary: 70000,
+        noticePeriod: 10,
+        react: 1,
+        typescript: 1,
+        next: 0,
+        sass: 1,
+        figma: 1,
+        semanticHtml: 1,
+        storybook: 0,
+      };
+
+      console.log(JSON.parse(JSON.stringify(applicationData)));
+
+      // fetch(
+      //   "https://asia-northeast1-willeder-official.cloudfunctions.net/api/apply/frontend",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(applicationData),
+      //   }
+      // )
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log("Application submitted successfully:", data);
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error submitting application:", error);
+      //   });
+    </script>
+  </body>
+</html>

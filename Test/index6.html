@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test6</title>
+  </head>
+  <body>
+    <h1 id="heading">Hi</h1>
+    <script>
+      document.body.style.background = "#282c34";
+      function Display() {}
+
+      Display.prototype.display = function (name = "hhe") {
+        console.log("Hello   " + name);
+      };
+
+      var dis = new Display();
+      dis.display();
+
+      var obj = document.getElementById("heading");
+
+      // console.log(Object.getPrototypeOf(obj));
+
+      let a = [1, 2, 3, 4];
+      let b = {
+        1: "Red",
+        2: "Green",
+        3: "Yellow",
+        4: "Blue",
+      };
+      a.map((item) => {
+        var button = document.createElement("button");
+        button.textContent = item;
+        button.id = item;
+        button.type = "button";
+        button.addEventListener("mouseover", (e) => {
+          // button.style.backgroundColor = b[item];
+          console.log(Object.getPrototypeOf(button));
+          console.log(Object.keys(button));
+        });
+        document.body.appendChild(button);
+      });
+
+      console.log(b);
+
+      function outerFunction(outervariable) {
+        function innerFunction(innervariable) {
+          console.log(outervariable + innervariable);
+        }
+        return innerFunction;
+      }
+
+      const obj1 = outerFunction(4);
+      obj1(5);
+
+      let originalObject = {};
+      // let cloneObject = Object.getPrototypeOf(originalObject);
+      let cloneObject = originalObject;
+      console.log(originalObject);
+      console.log(cloneObject);
+      originalObject.name = "Ashu";
+      console.log(cloneObject);
+      cloneObject.age = "Ashutosh";
+      console.log(cloneObject);
+      console.log(Object.prototype.valueOf(originalObject));
+
+      let value1 = 4;
+      value2 = value1;
+      console.log(value2);
+      value1 = 5;
+      console.log(value2);
+
+      let sourceObj = { name: "Ashu" };
+      // let targetObj = {};
+      let targetObj = Object.assign({}, sourceObj);
+      Object.assign(targetObj, sourceObj);
+      console.log(targetObj);
+
+      // let originalArray = [1,2,3,4,5];
+      // let modifiedArray = originalArray.map(function(currentValue, index, originalArray){
+      //   return ++currentValue;
+      // });
+
+      // console.log(modifiedArray);
+
+      // let originalArray = [1,2,3,4,5,6,7,8,9,10];
+      // let modifiedArray = originalArray.filter(function(currentValue, index, originalArray){
+      //   return currentValue%2==0;
+      // });
+
+      // console.log(modifiedArray);
+
+      // let originalArray = [1,2,3,4,5,6,7,8,9,10];
+      // let modifiedArray = originalArray.reduce(function(accumulator,currentValue, index, originalArray){
+      //   return accumulator+=currentValue;
+      // });
+
+      // console.log(modifiedArray);
+
+      // let originalArray = [5,4,3,2,1];
+      // let result = originalArray.map((item)=>Math.pow(item,2))
+      // .filter((item)=>item%2===0)
+      // .reduce((accumulator,item)=>accumulator+=item);
+
+      // console.log(result);
+
+      // let objectPrototype = Object.create(Object.prototype);
+      // let htmlPrototype = Object.create(HTMLElement.prototype);
+      // let mixedPrototype = Object.assign({},objectPrototype,htmlPrototype);
+      // console.log(Object.getPrototypeOf(mixedPrototype));
+
+      // console.log(console);
+
+      // const array = [1,2,3,4,5];
+      // const keys = Object.keys(array);
+      // const values = Object.values(array);
+      // const entries = Object.entries(array);
+      // console.log(keys);
+      // console.log(values);
+      // console.log(entries);
+
+      const object = { a: 1, b: 2, c: 3, greet: () => console.log("hello") };
+      let object2 = {};
+      // object2 = Object.getPrototypeOf(object);
+      Object.defineProperty(object2, "newProperty", {
+        value: "Hwllo",
+        writable: true,
+        configurable: true,
+        enumerable: true,
+      });
+      console.log(object2);
+
+      // let string1 = "Hello";
+      // let string2 = "My";
+      // let string3 = "Name";
+      // let string4 = "is";
+      // let string5 = "Ashutosh";
+      // let combinedString =
+      //   string1 + "\n" + string2 + string3 + string4 + string5;
+      // console.log(combinedString);
+      // let combinedString2 = `${string1} ${string2} ${string3} ${string4} ${string5}`;
+      // console.log(combinedString2);
+
+      let array = [1, 2, 3];
+      // for(const key of array){
+      //   console.log(key);
+      // }
+      array.forEach(function (element, index, array) {
+        return (element += 1);
+      });
+
+      // const promise = ()=>{
+      //   return new Promise((resolve, reject) => {
+      //   fetch("https://official-joke-api.appspot.com/random_joke")
+      //     .then((response) => {
+      //       if (!response.ok) {
+      //         throw new Error("Network response was not ok");
+      //       }
+      //       return response.json();
+      //     })
+      //     .then((data) => {
+      //       resolve(data);
+      //     })
+      //     .catch((error) => {
+      //       reject(error);
+      //     });
+      // });
+      // }
+
+      // promise().then(data=>console.log(data)).catch(error=>console.log(error));
+
+
+      function add(x) {
+  return {
+    value: x,
+    add: function(y) {
+      this.value += y;
+      console.log("Object "+this);
+      return this;  // Returning the object to enable chaining
+    },
+    multiply: function(y) {
+      this.value *= y;
+      console.log("Object "+this);
+      return this;  // Returning the object to enable chaining
+    },
+    getValue: function() {
+      
+      return this.value;
+    }
+  };
+}
+
+// Chaining function calls
+const result = add(5).add(3).multiply(2).getValue();
+console.log(result);  // Output: 16
+
+
+async function fetchData(){
+  
+  try{
+    const response = await fetch("https://official-joke-api.appspot.com/random_joke");
+    const data = await response.json();
+    console.log(response);
+  console.log(data);
+  return `${data.setup} ${data.punchline}`;
+  }
+  
+  catch(error){
+    return error;
+  }
+  
+}
+
+
+fetchData().then(result=>console.log(result)).catch(error => console.log(error));
+      
+    </script>
+  </body>
+</html>

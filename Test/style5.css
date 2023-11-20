@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.rating{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    border: solid 2px;
+    height: 10rem;
+    width: 20rem;
+}
+
+.stars{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    list-style: none;
+}
+
+.stars li{
+    cursor: pointer;
+    color: #c9c9c9;
+}
+
+.stars li:hover, .stars li:hover ~ li{
+    color: #ffd700;
+}
